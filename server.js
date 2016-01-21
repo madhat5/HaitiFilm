@@ -26,7 +26,7 @@ app.use(express.static('public'));
 mongoose.connect('mongodb://localhost/haiti_flix');
 
 // MODELS
-var User = require('./models/user');
+var User = require('./models/user.js');
 
 // ROUTES ============================================
 // TEST
