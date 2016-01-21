@@ -1,13 +1,13 @@
 var mongoose = require('mongoose');
 
-var userSchema = new mongoose.SChema({
+var userSchema = new mongoose.Schema({
   username: {
     type: String,
     require: true,
     unique: true
   },
   password_hash: {
-    type: String
+    type: String,
     required: true
   },
   create_at: {

@@ -35,4 +35,12 @@ var User = require('./models/user.js');
 // });
 
 // INDEX
+app.get('/users', function(req, res){
+  User.find().then(function(users){
+    console.log('Users displayed');
+    res.send(users);
+  })
+});
+
+
 

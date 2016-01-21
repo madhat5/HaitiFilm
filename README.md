@@ -147,7 +147,7 @@ App Build Steps:
     - setup basic test index.html/app.js
     - launch server (nodemon)
 
-- models build --o--
+- models build --x--
     - mkdir models
     	- touch models/user.js
     - server.js
@@ -156,7 +156,7 @@ App Build Steps:
 		- var mongoose = require('mongoose'),
 		- var userSchema = new mongoose.Schema({ ... });
 		- var User = mongoose.model('User', userSchema);
-		- module.exports = User
+		- module.exports = User;
 
 - user auth build --o--
 	- server.js
