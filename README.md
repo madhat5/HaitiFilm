@@ -59,7 +59,7 @@ Deployment flow:
         - Pull request)
     - OR
     - (git push origin master)
-    
+
 
 ---
 MVP
@@ -67,29 +67,24 @@ MVP
 Models:
 
 - user
-    - username/email: string
+    - email: string
     - password: string?
-    - embed goals: obj
+    - my_List: array (of movies)
 
-- goals
+- movie
 	- title: string
-	- steps: string
-		- step_completed: boolean
-	- goal_completed: boolean
+	- description: string
+	- rating: integer
+	- tags: array (of strings?)
 
-- step
-
-User story: (UPDATE)
-(MOAR MODALS!!!)
+User story: 
 
 - landing page:
     - log in button
-        - > opens login form (passport) as modal
-    - register form
-    - tutorial button
-    - register buton
-        - > opens register form (passport) as modal
-    - # of goals and # of goals completed
+        - > opens login form (passport?) as modal
+    - register form + register buton
+    - random movie highlight?
+    - carousel: movies lists
 
 
 +features:
@@ -102,12 +97,12 @@ App Build Steps:
 
 - touch server.js --x--
 
-- npm init --x--
+- npm init --o--
 	-'enter' through all the prompts
 
-- packages setup --x--
+- packages setup --ox--
 	- npm install --save express morgan mongoose cookie-parser body-parser md5
-	- app.js
+	- server.js
 		- dependecies
 			- var express = require('express');
 			- logger = require('morgan')
@@ -126,34 +121,34 @@ App Build Steps:
 		- mongo
 			- mongoose.connect('mongodb://localhost/db_name');
 
-- app port & listener --x--
+- app port & listener --o--
 	- server.js
 		- var port = process.env.PORT || 3000;
 		- app.listen(port);
 		- console.log('Silence please...' + '\n' + 'Curtains up...' + '\n' + 'Server started on: ' + port);
 
-- test connection --x--
+- test connection --o--
     - setup basic test route
     - - launch server (nodemon)
 
-- safety --x--
+- safety --o--
     - touch .gitignore 
     - add:
         - node_modules
 
-- mkdir public --x--
+- mkdir public --o--
 	- server.js
 		- app.use(express.static('public'));
 	- touch public/index.html
 	- touch public/app.js
 	- touch public/style.css
 
-- test connection --x--
+- test connection --o--
     - setup basic test route
     - setup basic test index.html/app.js
     - launch server (nodemon)
 
-- models build --x--
+- models build --o--
     - mkdir models
     	- touch models/user.js
     - server.js
@@ -164,7 +159,7 @@ App Build Steps:
 		- var User = mongoose.model('User', userSchema);
 		- module.exports = User
 
-- user auth build --ox--
+- user auth build --o--
 	- server.js
 		- create register
 		- create login/user info
@@ -173,7 +168,7 @@ App Build Steps:
 		- register: curl -X POST -d '{"username": "test@test.com", "password": "test"}' http://localhost:3000/users
 		- login: curl -X POST -d '{"username": "test@test.com", "password": "test"}' http://localhost:3000/login
 
-- models build --x--
+- models build --o--
     - server.js
 		- var Goal = require('./models/goal');
 		- var Step = require('./models/step.js')
@@ -191,7 +186,7 @@ App Build Steps:
     	- Goal CRUD
     	- Step CRUD
 
-- Story build --ox--
+- Story build --o--
     - public/index.html
     	- CDN --o--
 			- js-cookie
@@ -211,7 +206,7 @@ App Build Steps:
     - public/style.css
 		- bootstrap
 
-- Heroku --ox--
+- Heroku --o-- (OR AWS?)
 	- heroku create
 	- touch Procfile
 	- Profile
