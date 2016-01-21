@@ -59,7 +59,7 @@ Deployment flow:
         - Pull request)
     - OR
     - (git push origin master)
-    
+
 
 ---
 MVP
@@ -67,29 +67,24 @@ MVP
 Models:
 
 - user
-    - username/email: string
+    - email: string
     - password: string?
-    - embed goals: obj
+    - my_List: array (of movies)
 
-- goals
+- movie
 	- title: string
-	- steps: string
-		- step_completed: boolean
-	- goal_completed: boolean
+	- description: string
+	- rating: integer
+	- tags: array (of strings?)
 
-- step
-
-User story: (UPDATE)
-(MOAR MODALS!!!)
+User story: 
 
 - landing page:
     - log in button
-        - > opens login form (passport) as modal
-    - register form
-    - tutorial button
-    - register buton
-        - > opens register form (passport) as modal
-    - # of goals and # of goals completed
+        - > opens login form (passport?) as modal
+    - register form + register buton
+    - random movie highlight?
+    - carousel: movies lists
 
 
 +features:
@@ -102,19 +97,19 @@ App Build Steps:
 
 - touch server.js --x--
 
-- npm init --x--
+- npm init --o--
 	-'enter' through all the prompts
 
 - packages setup --x--
 	- npm install --save express morgan mongoose cookie-parser body-parser md5
-	- app.js
+	- server.js
 		- dependecies
-			- var express = require('express');
-			- logger = require('morgan')
-			- mongoose = require('mongoose')
-			- cookieParser = require('cookie-parser')
-            - bodyParser = require('body-parser')
-            - expressSession = require('md5')
+			- var express = require('express'),
+			- logger = require('morgan'),
+			- mongoose = require('mongoose'),
+			- cookieParser = require('cookie-parser'),
+            - bodyParser = require('body-parser'),
+            - expressSession = require('md5');
 		- express
 			- var app = express();
 		- middleware
@@ -122,7 +117,6 @@ App Build Steps:
 			- app.use(cookieParser());
             - app.use(bodyParser.urlencoded({ extended: true}));
             - app.use(bodyParser.json());
-            - (ADD SCRIPTS, if needed)
 		- mongo
 			- mongoose.connect('mongodb://localhost/db_name');
 
@@ -134,7 +128,7 @@ App Build Steps:
 
 - test connection --x--
     - setup basic test route
-    - - launch server (nodemon)
+    - launch server (nodemon)
 
 - safety --x--
     - touch .gitignore 
@@ -162,9 +156,9 @@ App Build Steps:
 		- var mongoose = require('mongoose'),
 		- var userSchema = new mongoose.Schema({ ... });
 		- var User = mongoose.model('User', userSchema);
-		- module.exports = User
+		- module.exports = User;
 
-- user auth build --ox--
+- user auth build --o--
 	- server.js
 		- create register
 		- create login/user info
@@ -173,7 +167,7 @@ App Build Steps:
 		- register: curl -X POST -d '{"username": "test@test.com", "password": "test"}' http://localhost:3000/users
 		- login: curl -X POST -d '{"username": "test@test.com", "password": "test"}' http://localhost:3000/login
 
-- models build --x--
+- models build --o--
     - server.js
 		- var Goal = require('./models/goal');
 		- var Step = require('./models/step.js')
@@ -191,7 +185,7 @@ App Build Steps:
     	- Goal CRUD
     	- Step CRUD
 
-- Story build --ox--
+- Story build --o--
     - public/index.html
     	- CDN --o--
 			- js-cookie
@@ -211,7 +205,7 @@ App Build Steps:
     - public/style.css
 		- bootstrap
 
-- Heroku --ox--
+- Heroku --o-- (OR AWS?)
 	- heroku create
 	- touch Procfile
 	- Profile

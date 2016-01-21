@@ -1,0 +1,28 @@
+{
+  "name": "haiti_film",
+  "version": "1.0.0",
+  "description": "# goal-helper_app-MEAN - Final Project (MEAN) ---",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madhat5/HaitiFilm.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/madhat5/HaitiFilm/issues"
+  },
+  "homepage": "https://github.com/madhat5/HaitiFilm#readme",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "cookie-parser": "^1.4.1",
+    "express": "^4.13.3",
+    "md5": "^2.0.0",
+    "mongoose": "^4.3.6",
+    "morgan": "^1.6.1"
+  }
+}
