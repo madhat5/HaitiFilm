@@ -126,23 +126,23 @@ App Build Steps:
 		- app.listen(port);
 		- console.log('Silence please...' + '\n' + 'Curtains up...' + '\n' + 'Server started on: ' + port);
 
-- test connection --o--
+- test connection --x--
     - setup basic test route
     - launch server (nodemon)
 
-- safety --o--
+- safety --x--
     - touch .gitignore 
     - add:
         - node_modules
 
-- mkdir public --o--
+- mkdir public --x--
 	- server.js
 		- app.use(express.static('public'));
 	- touch public/index.html
 	- touch public/app.js
 	- touch public/style.css
 
-- test connection --o--
+- test connection --x--
     - setup basic test route
     - setup basic test index.html/app.js
     - launch server (nodemon)

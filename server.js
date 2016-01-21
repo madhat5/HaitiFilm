@@ -20,16 +20,19 @@ app.use(logger('dev'));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-// app.use(express.static('public'));
+app.use(express.static('public'));
 
 // MONGO
-// mongoose.connect('mongodb://localhost/haiti_flix');
+mongoose.connect('mongodb://localhost/haiti_flix');
 
 // MODELS
+var User = require('./models/user');
 
 // ROUTES ============================================
 // TEST
-app.get('/test', function(req, res){
-  res.send("Open Sesame");
-};
+// app.get('/test', function(req, res){
+//   res.send("Open Sesame");
+// });
+
+// INDEX
 
