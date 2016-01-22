@@ -158,7 +158,7 @@ App Build Steps:
 		- var User = mongoose.model('User', userSchema);
 		- module.exports = User;
 
-- user auth build --o--
+- user auth build --ox--
 	- server.js
 		- create register
 		- create login/user info
@@ -167,7 +167,7 @@ App Build Steps:
 		- register: curl -X POST -d '{"username": "test@test.com", "password": "test"}' http://localhost:3000/users
 		- login: curl -X POST -d '{"username": "test@test.com", "password": "test"}' http://localhost:3000/login
 
-- Basic Story build --ox--
+- Basic Story build --o--
     - public/index.html
     	- CDN --o--
 			- js-cookie
