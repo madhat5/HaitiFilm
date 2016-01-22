@@ -42,5 +42,29 @@ app.get('/users', function(req, res){
   })
 });
 
+// REGISTER
+app.post('/users', function(req, res){
+  var passwordHash = md5(req.body.password);
 
+  var user = new User ({
+    username: req.body.username,
+    password_hash: passwordHash
+  });
+
+  user.save(function(err){
+    if (err){
+      console.log(err);
+      res.statusCode = 503;
+    } else {
+      console.log(user.username + 'registered');
+      res.cookie('loggedinId', user.id);
+      res.send({
+        id: user.id,
+        username: user.username
+      });
+    };
+  });
+}) // end of REGISTER
+
+// LOGIN
 

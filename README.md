@@ -167,25 +167,7 @@ App Build Steps:
 		- register: curl -X POST -d '{"username": "test@test.com", "password": "test"}' http://localhost:3000/users
 		- login: curl -X POST -d '{"username": "test@test.com", "password": "test"}' http://localhost:3000/login
 
-- models build --o--
-    - server.js
-		- var Goal = require('./models/goal');
-		- var Step = require('./models/step.js')
-    - goal.js
-        - var mongoose = require('mongoose');
-        - var goalSchema = new mongoose.Schema({ ... });
-        - var Goal = mongoose.model('Goal', goalSchema);
-        - module.exports = Goal;
-    - step.js
-        - var mongoose = require('mongoose');
-        - var stepSchema = new mongoose.Schema({ ... });
-        - var Step = mongoose.model('Step', stepSchema);
-        - module.exports = Step;
-    - server.js
-    	- Goal CRUD
-    	- Step CRUD
-
-- Story build --o--
+- Basic Story build --ox--
     - public/index.html
     	- CDN --o--
 			- js-cookie
@@ -204,6 +186,24 @@ App Build Steps:
     		- user controller
     - public/style.css
 		- bootstrap
+
+- models build --o--
+    - server.js
+		- var Goal = require('./models/goal');
+		- var Step = require('./models/step.js')
+    - goal.js
+        - var mongoose = require('mongoose');
+        - var goalSchema = new mongoose.Schema({ ... });
+        - var Goal = mongoose.model('Goal', goalSchema);
+        - module.exports = Goal;
+    - step.js
+        - var mongoose = require('mongoose');
+        - var stepSchema = new mongoose.Schema({ ... });
+        - var Step = mongoose.model('Step', stepSchema);
+        - module.exports = Step;
+    - server.js
+    	- Goal CRUD
+    	- Step CRUD
 
 - Heroku --o-- (OR AWS?)
 	- heroku create
