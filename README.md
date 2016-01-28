@@ -28,6 +28,18 @@ Timeline goals: (start by)
     - Site planning
     - Basic MEAN
 
+- February --o--
+    - implement passport
+
+- March --o--
+    - implement payment framework
+
+- April --o--
+
+- May --o--
+
+- June --o--
+
 - July --o--
 	- MVP
 
@@ -97,7 +109,7 @@ App Build Steps:
 
 - touch server.js --x--
 
-- npm init --o--
+- npm init --x--
 	-'enter' through all the prompts
 
 - packages setup --x--
