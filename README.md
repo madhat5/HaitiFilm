@@ -24,24 +24,30 @@ Technical Requirements:
 ---
 Timeline goals: (start by)
 
-- January --o--
+- January --ox--
     - Site planning
     - Basic MEAN
 
 - February --o--
     - implement passport
+    - user test
 
 - March --o--
     - implement payment framework
+    - user test
 
 - April --o--
+    - user test
 
 - May --o--
+    - user test
 
 - June --o--
+    - user test
 
 - July --o--
 	- MVP
+    - user test
 
 --
 Deployment flow:
@@ -170,7 +176,7 @@ App Build Steps:
 		- var User = mongoose.model('User', userSchema);
 		- module.exports = User;
 
-- user auth build --ox--
+- user auth build --x--
 	- server.js
 		- create register
 		- create login/user info
@@ -179,7 +185,7 @@ App Build Steps:
 		- register: curl -X POST -d '{"username": "test@test.com", "password": "test"}' http://localhost:3000/users
 		- login: curl -X POST -d '{"username": "test@test.com", "password": "test"}' http://localhost:3000/login
 
-- Basic Story build --o--
+- Basic Story build --ox--
     - public/index.html
     	- CDN --o--
 			- js-cookie
