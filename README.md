@@ -187,7 +187,7 @@ App Build Steps:
 
 - Basic Story build --ox--
     - public/index.html
-    	- CDN --o--
+    	- CDN
 			- js-cookie
 				- <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.0.4/js.cookie.js"></script>
 		    - angular
@@ -196,6 +196,8 @@ App Build Steps:
 		    	- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 		    	- html build
     - public/app.js
+        - public/index.html
+            - link app.js to index.html
     	- angular build
     		- user auth
     			- build around ngshow (if user true, show all, else (please login))
