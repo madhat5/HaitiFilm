@@ -16,36 +16,40 @@
       <li class='nav-item'><a href="#" ng-show='userController.loggedIn' ng-click=''>My Movies</a></li>
     </ul>
 <!-- ================= WELCOME SCREEN ================= -->
-  <div class='container-fluid'>
-    <div id='landing-page' class='row'>
-      <!-- LOGIN -->
-      <div class='login-form' ng-hide='userController.loggedIn'>
-        <div id='login-input'>
-          <h1>Login</h1>
-          <input id='login-username' type='text' class='validate' placeholder='Email' ng-model='userController.loginUsername'>
-          <input id='login-password' type='password' placeholder='Password' ng-model='userController.loginPassword'>
-        </div>
-        <br>
-        <br>
-        <button id='login-submit' type='submit' name='action' class='btn btn-default' ng-click='userController.loginSubmit()'>Login</button>
-      </div> <!-- end of login-form -->
-      <!-- REGISTER -->
-      <div id='register-form' ng-hide='userController.loggedIn'>
-        <div id='register-input'>
-          <h1>REGISTER</h1>
-          <input id='register-username' type='text' class='validate' placeholder='Email' ng-model='userController.registerUsername'>
-          <input id='register-password' type='password' class='validate' placeholder='Password' ng-model='userController.registerPassword'>
-        </div>
-        <br>
-        <br>
-        <button id='register-submit' type='submit' name='action' class='btn btn-default' ng-click='userController.regusterSubmit()'>Register</button>
-      </div> <!-- end of register-form -->
-    </div>
-
-  </div>
+    <div class='container-fluid'>
+      <div id='landing-page' class='row'>
+        <!-- LOGIN -->
+        <div class='login-form' ng-hide='userController.loggedIn'>
+          <div id='login-input'>
+            <h1>Login</h1>
+            <input id='login-username' type='text' class='validate' placeholder='Email' ng-model='userController.loginUsername'>
+            <input id='login-password' type='password' placeholder='Password' ng-model='userController.loginPassword'>
+          </div>
+          <br>
+          <br>
+          <button id='login-submit' type='submit' name='action' class='btn btn-default' ng-click='userController.loginSubmit()'>Login</button>
+        </div> <!-- end of login-form -->
+        <!-- REGISTER -->
+        <div id='register-form' ng-hide='userController.loggedIn'>
+          <div id='register-input'>
+            <h1>REGISTER</h1>
+            <input id='register-username' type='text' class='validate' placeholder='Email' ng-model='userController.registerUsername'>
+            <input id='register-password' type='password' class='validate' placeholder='Password' ng-model='userController.registerPassword'>
+          </div>
+          <br>
+          <br>
+          <button id='register-submit' type='submit' name='action' class='btn btn-default' ng-click='userController.regusterSubmit()'>Register</button>
+        </div> <!-- end of register-form -->
+      </div> <!-- end of landing-page -->
+    </div> <!-- end of container -->
 <!-- ================== LOGGED IN ================== -->
-
-  </div>
+  <!-- MOVIE DISPLAY -->
+    <div class='container-fluid' id='movie-display-page'>
+      <div id='movie-display' class='row' ng-show='userController.loggedIn'>
+        <h1>Open Sesame</h1>
+      </div> <!-- end of movie-display -->
+    </div> <!-- end of container -->
+  </div> <!-- end of ngmyusers -->
 
   <script src='app.js'></script>
 </body>
