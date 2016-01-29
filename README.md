@@ -30,6 +30,7 @@ Timeline goals: (start by)
 
 - February --o--
     - implement passport
+    - CRUD
     - user test
 
 - March --o--
@@ -38,16 +39,20 @@ Timeline goals: (start by)
 
 - April --o--
     - user test
+    - design
 
 - May --o--
     - user test
+    - design
 
 - June --o--
     - user test
+    - design
 
 - July --o--
 	- MVP
     - user test
+    - design
 
 --
 Deployment flow:
