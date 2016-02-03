@@ -269,6 +269,8 @@ Reference
 		- http://stackoverflow.com/questions/15810278/if-else-statement-in-angularjs-templates
 	- hide/show
 		- https://scotch.io/tutorials/how-to-use-ngshow-and-nghide
+    - debug
+        - http://stackoverflow.com/questions/31445470/angularjs-stopped-working
 
 - Misc
 	- CSS colors:

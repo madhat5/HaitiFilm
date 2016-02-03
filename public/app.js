@@ -1,5 +1,5 @@
-// // TEST
-// console.log("Open Sesame");
+// TEST
+console.log("Sim Sim Salabim");
 // ====================================================
 angular.module('MyUsers', []).directive('ngmyusers', function(){
   return{
