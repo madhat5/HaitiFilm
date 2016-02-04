@@ -22,18 +22,25 @@ Technical Requirements:
 
 
 ---
-Timeline goals: (start by)
+Timeline goals:
 
-- January --ox--
+- January --x--
     - Site planning
     - Basic MEAN
+        - user auth
 
-- February --o--
-    - implement passport
+- February --ox--
     - CRUD
+        - user movie list
+        - user profile?
+    - Update user auth
+        - implement passport
+    - server launch
+        - heroku to start? or aws free?
     - user test
 
 - March --o--
+    - MVP
     - implement payment framework
     - user test
 
@@ -50,7 +57,6 @@ Timeline goals: (start by)
     - design
 
 - July --o--
-	- MVP
     - user test
     - design
 
@@ -247,9 +253,7 @@ App Build Steps:
 ---
 Bugs
 
-- angular, hide/show --x--
-- login --x--
-- logout --o--
+- logout --ox--
 
 ---
 ---

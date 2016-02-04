@@ -87,7 +87,7 @@ angular.module('MyUsers', []).directive('ngmyusers', function(){
 
       // LOGOUT USER
       this.logOut = function(){
-        cookies.remove('loggedIn');
+        cookie.remove('loggedIn');
         self.getUser;
         self.loggedin = false;
         console.log(Cookies);
