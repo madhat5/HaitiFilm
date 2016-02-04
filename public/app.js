@@ -27,7 +27,7 @@ angular.module('MyUsers', []).directive('ngmyusers', function(){
       this.getUser = function(){
         console.log('... validating user ...');
         if (Cookies.get('loggedinId') != null){
-          self.$http.get('/users/' + Cookies.get('loggedinId')).then(function success(res){
+          self.$http.get('/user/' + Cookies.get('loggedinId')).then(function success(res){
               // TEST
               console.log(res.data)
 
