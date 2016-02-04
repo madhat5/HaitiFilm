@@ -27,7 +27,7 @@ angular.module('MyUsers', []).directive('ngmyusers', function(){
       this.getUser = function(){
         console.log('... validating user ...');
         if (Cookies.get('loggedinId') != null){
-          self.$http.get('/users' + Cookies.get('loggedinId')).then(function success(res){
+          self.$http.get('/users/' + Cookies.get('loggedinId')).then(function success(res){
               // TEST
               console.log(res.data)
 
@@ -58,6 +58,8 @@ angular.module('MyUsers', []).directive('ngmyusers', function(){
           self.register = false;
           self.login = false;
         }, function error(){
+          self.login = false;
+          self.register = false;
           alert("D'OH! Seems like Bart broke it. Please try again...");
         });
       }; // end of USER REGISTER
@@ -87,9 +89,10 @@ angular.module('MyUsers', []).directive('ngmyusers', function(){
 
       // LOGOUT USER
       this.logOut = function(){
-        cookie.remove('loggedIn');
+        Cookies.remove('loggedinId');
         self.getUser;
-        self.loggedin = false;
+        self.currentUser = [{}];
+        // self.loggedin = false;
         console.log(Cookies);
       };
 

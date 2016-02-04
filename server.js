@@ -34,7 +34,7 @@ var User = require('./models/user.js');
 //   res.send("Open Sesame");
 // });
 
-// USER AUTH
+// USER AUTH:
 // INDEX
 app.get('/users', function(req, res){
   User.find().then(function(users){
