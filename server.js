@@ -57,7 +57,7 @@ app.post('/users', function(req, res){
       console.log(err);
       res.statusCode = 503;
     } else {
-      console.log(user.username + 'registered');
+      console.log(user.username + ' registered');
       res.cookie('loggedinId', user.id);
       res.send({
         id: user.id,
@@ -95,8 +95,6 @@ app.get('/user/:id', function(req, res){
     };
   });
 }); // end of USER INFO
-
-
 
 
 // TEMP ============================================

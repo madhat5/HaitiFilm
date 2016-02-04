@@ -25,9 +25,9 @@ angular.module('MyUsers', []).directive('ngmyusers', function(){
 
       // USER, GET
       this.getUser = function(){
-        console.log('... searching for ALL users ...');
-        if (Cookies.get('loggedinID') != null){
-          self.$http.get('/users' + Cookies.get('loggedinID')).then(function success(res){
+        console.log('... validating user ...');
+        if (Cookies.get('loggedinId') != null){
+          self.$http.get('/users' + Cookies.get('loggedinId')).then(function success(res){
               // TEST
               console.log(res.data)
 

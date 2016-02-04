@@ -245,6 +245,11 @@ App Build Steps:
 
 ---
 ---
+Bugs
+
+- angular, hide/show --x--
+- login --x--
+- logout --o--
 
 ---
 ---
