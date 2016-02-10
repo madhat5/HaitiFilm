@@ -35,11 +35,11 @@ Timeline goals:
         - user profile?
     - Update user auth
         - implement passport
-    - server launch
-        - heroku to start? or aws free?
     - user test
 
 - March --o--
+    - server launch
+        - heroku to start? or aws free?
     - MVP
     - implement payment framework
     - user test
@@ -254,7 +254,7 @@ App Build Steps:
 Bugs
 
 - logout --ox--
-- userID - 404 not found right after login
+- userID > 404 not found right after login
     - server line 42
 
 ---
