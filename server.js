@@ -137,7 +137,7 @@ app.put('/movies/:id', function(req, res){
 });
 
 // DELETE
-app.delete('/movies/:id', functino(req, res){
+app.delete('/movies/:id', function(req, res){
   console.log('Removing movie from list');
   Movie.findOneAndRemove({ _id: req.params.id }, function(err){
     if (err){

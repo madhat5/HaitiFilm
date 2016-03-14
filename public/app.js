@@ -151,31 +151,29 @@ angular.module('MyMovies', []).directive('ngmymovies', function(){
 }); // end of angular.module
 
 // TEMP ==============================================
+      // // CREATE GOAL, POST
+      // this.addGoal = function(){
+      //   self.$http.post('/goals', {goalTitle: this.formGoalTitle}).then(function success(res){
+      //     // TEST
+      //     console.log(res.data);
 
+      //     self.goals.push(res.data);
+      //     self.formGoalTitle = '';
+      //   }, function error(){
+      //     console.log("D'OH...CREATE ERROR...")
+      //   });
+      // }; // end of USER.GOAL POST
 
-      // CREATE GOAL, POST
-      this.addGoal = function(){
-        self.$http.post('/goals', {goalTitle: this.formGoalTitle}).then(function success(res){
-          // TEST
-          console.log(res.data);
+      // // DELETE GOAL
+      // this.deleteGoal = function(goal){
+      //   var id = goal._id;
+      //   self.$http.delete('/goals/' + id).then(function success(res){
+      //     // TEST
+      //     console.log(res);
 
-          self.goals.push(res.data);
-          self.formGoalTitle = '';
-        }, function error(){
-          console.log("D'OH...CREATE ERROR...")
-        });
-      }; // end of USER.GOAL POST
-
-      // DELETE GOAL
-      this.deleteGoal = function(goal){
-        var id = goal._id;
-        self.$http.delete('/goals/' + id).then(function success(res){
-          // TEST
-          console.log(res);
-
-          self.getGoals();
-        }, function error(){
-          console.log("D'OH...DELETE ERROR...");
-        });
-      }; // end of GOAL DELETE
+      //     self.getGoals();
+      //   }, function error(){
+      //     console.log("D'OH...DELETE ERROR...");
+      //   });
+      // }; // end of GOAL DELETE
 
