@@ -111,9 +111,40 @@ angular.module('MyMovies', []).directive('ngmymovies', function(){
       self.totalMovies = 0;
 
       // ALL MOVIES
+      this.totalMovies = function(){
+        return self.movies.length
+      };
+
       // ALL MOVIES, GET
+      this.getMovies = function(){
+        console.log('Searching for all movies');
+        self.$http.get('/movies').then(function(res){
+          // TEST
+          console.log(res);
+
+          self.movies = res.data;
+        });
+        return self.movies;
+      }; // end of MOVIE GET
+      this.getMovies();
+
       // CREATE MOVIE, POST
+      this.addMovie = function(){
+        // =============================================
+        // set a button w/ each movie to create new item in favorites list
+        // ensure favorites list user specific
+        // =============================================
+        self.$http.post('/users', {favorites: this})
+      }; // end of USER.MOVIE POST
+
       // DELETE MOVIE
+      this.deleteMovie = function(movie){
+        var id = movie._id;
+        // =============================================
+        // set delete to (users/ + id so that user.favorite is deleted)
+        // =============================================
+        self.$http.delete('/')
+      }; // end of MOVIE DELETE
 
     }] // end of controller
   }; // end of return
@@ -121,36 +152,6 @@ angular.module('MyMovies', []).directive('ngmymovies', function(){
 
 // TEMP ==============================================
 
-angular.module('MyGoals', []).directive('ngmygoals', function(){
-  return{
-    controllerAs: 'goalController',
-    controller: ['$http', function GoalCtrl($http){
-
-      this.$http = $http;
-      var self = this;
-
-    // GOAL CONTROLLER (AND STEP?)
-    // ================================================
-      self.goals = [];
-      self.totalGoals = 0;
-
-      // ALL GOALS
-      this.totalGoals = function() {
-        return self.goals.length
-      };
-
-      // ALL GOALS, GET
-      this.getGoals = function(){
-        console.log('Searching for all goals...');
-        self.$http.get('/goals').then(function(res){
-          // TEST
-          console.log(res);
-
-          self.goals = res.data;
-        });
-        return self.goals;
-      }; // end of GOAL GET
-      this.getGoals();
 
       // CREATE GOAL, POST
       this.addGoal = function(){
@@ -165,30 +166,6 @@ angular.module('MyGoals', []).directive('ngmygoals', function(){
         });
       }; // end of USER.GOAL POST
 
-      // EDIT GOAL
-        this.populateGoalForm = function(goal){
-          self.formGoalId = goal._id;
-          self.formGoalTitle = goal.goalTitle;
-          // self.formGoalStep = goal.step;
-        };
-
-        this.editGoal = function(){
-          var id = this.formGoalId;
-          self.$http.put('/goals/' + id, {
-            goalTitle: this.formGoalTitle,
-            // steps: this.formGoalStep
-          }).then(function success(res){
-            // TEST
-            console.log(res);
-
-            self.getGoals();
-            self.formGoalId = '';
-            self.formGoalTitle = '';
-          }, function error(){
-            console.log("D'OH...EDIT ERROR...")
-          });
-        }; // end of GOAL PUT
-
       // DELETE GOAL
       this.deleteGoal = function(goal){
         var id = goal._id;
@@ -202,6 +179,3 @@ angular.module('MyGoals', []).directive('ngmygoals', function(){
         });
       }; // end of GOAL DELETE
 
-    }] // end of controller
-  }; // end of return
-}); // end of angular.module

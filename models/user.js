@@ -10,6 +10,9 @@ var userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  favorites: {
+    type: Array
+  },
   create_at: {
     type: Date,
     default: Date.now
