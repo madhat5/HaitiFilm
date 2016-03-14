@@ -1,6 +1,6 @@
 // TEST
-console.log("Sim Sim Salabim");
-// USER MODULE ==============================================
+// console.log("Sim Sim Salabim");
+// USER CONTROLLER ==============================================
 angular.module('MyUsers', []).directive('ngmyusers', function(){
   return{
     controllerAs: 'userController',
@@ -9,8 +9,6 @@ angular.module('MyUsers', []).directive('ngmyusers', function(){
       this.$http = $http;
       var self = this;
 
-      // USER CONTROLLER
-      // ================================================
       self.totalUsers = 0;
       self.currentUser = [{}];
       self.register = false;
@@ -99,6 +97,29 @@ angular.module('MyUsers', []).directive('ngmyusers', function(){
     }] // end of controller
   }; // end of return
 }); // end of angular.module
+
+// MOVIE CONTROLLER ==============================================
+angular.module('MyMovies', []).directive('ngmymovies', function(){
+  return{
+    controllerAs: 'movieController',
+    controller: ['$http', function MovieCtrl($http){
+
+      this.$http = $http;
+      var self = this;
+
+      self.movies = [];
+      self.totalMovies = 0;
+
+      // ALL MOVIES
+      // ALL MOVIES, GET
+      // CREATE MOVIE, POST
+      // DELETE MOVIE
+
+    }] // end of controller
+  }; // end of return
+}); // end of angular.module
+
+// TEMP ==============================================
 
 angular.module('MyGoals', []).directive('ngmygoals', function(){
   return{
