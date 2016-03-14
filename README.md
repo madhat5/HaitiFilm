@@ -298,10 +298,12 @@ Reference
 Comments/Notes:
 
 - gui
-    > Use final project for movie displays
+    > Use final project for movie displays --ox
         - movie genres part of movie model
+        _ Movie CRUD mostly for Favorites list
+    > Use final project for navbar --ox
     > Use porfolio for carousel --ox
-    > navbar --o
+    > SEED TEMP MOVIE DATA
     > search --o
 - setup movie model --x
     - action, adventure, comdedy, crime, drama, historical, horror, mystery, romance, science fiction, animation/cartoon, music video, favorites + recently added

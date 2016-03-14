@@ -97,7 +97,56 @@ app.get('/user/:id', function(req, res){
   });
 }); // end of USER INFO
 
+// MOVIE CRUD =======================================
+// INDEX
+app.get('/movies', function(req, res){
+  Movie.find().then(function(movies){
+    console.log('Showing Movies');
+    res.send(movies)
+  })
+});
+
+// CREATE
+app.post('/movies', function(req, res){
+  var movie = new Movie(req.body);
+  movie.save(function(err){
+    if (err){
+      console.log('ERROR MSG: ' + err);
+    } else {
+      console.log('======= Movie Create + Saved =======');
+      res.send(goal)
+    };
+  });
+});
+
+// READ INDIVIDUAL
+app.get('/movies/:id', function (req, res){
+  Movie.findById(req.params.id).then(function(movie){
+    console.log(movie);
+    res.send(movie)
+  });
+});
+
+// UDPATE
+app.put('/movies/:id', function(req, res){
+  Movie.findOneAndUpdate({ _id: req.params.id }, {
+    $set: req.body
+  }, function(err, movie){
+    res.send(movie);
+  });
+});
+
+// DELETE
+app.delete('/movies/:id', functino(req, res){
+  console.log('Removing movie from list');
+  Movie.findOneAndRemove({ _id: req.params.id }, function(err){
+    if (err){
+      console.log(err);
+    };
+    console.log('Movie has been removed from list');
+    res.send('Movie Removed');
+  });
+});
 
 // TEMP ============================================
-
 
