@@ -46,7 +46,7 @@
   <div id='myCarousel' class='carousel slide' data-ride='carousel'>
     <!-- Indicators -->
     <ol class='carousel-indicators'>
-      <li data-target='#myCarousel' data-slide-to='0' class='active'></li>
+      <li data-target='#myCarousel' data-slide-to='0' class="active"></li>
       <li data-target='#myCarousel' data-slide-to='1'></li>
       <li data-target='#myCarousel' data-slide-to='2'></li>
       <li data-target='#myCarousel' data-slide-to='3'></li>
@@ -54,16 +54,16 @@
     <!-- Wrapper for slides -->
     <div class='carousel-inner' role='listbox'>
       <div class='item active'>
-        <img class='first-slide' src="http://bit.ly/1P7hDUg" alt="Movie">
+        <img src="http://bit.ly/1P7hDUg" alt="Movie">
       </div>
       <div class='item'>
-        <img class='second-slide' src="http://bit.ly/1RIfnVA" alt="Movie">
+        <img src="http://bit.ly/1RIfnVA" alt="Movie">
       </div>
       <div class='item'>
-        <img class='third-slide' src="https://bitly.com/" alt="Movie">
+        <img src="https://bitly.com/" alt="Movie">
       </div>
       <div class='item'>
-        <img class='fourth-slide' src="http://bit.ly/1UajHmh" alt="Movie">
+        <img src="http://bit.ly/1UajHmh" alt="Movie">
       </div>
     </div>
     <!-- Left and right controls -->
@@ -77,9 +77,9 @@
     </a>
   </div> <!-- END OF CAROUSEL -->
   <!-- ========= MOVIE NAVIGATION ========= -->
-    <div class='container-fluid' id='movie-display'>
-      <div id='movie-display1' class='row' >
+    <div class='container-fluid' id='movie-display' ng-show='userController.loggedIn'>
       <!-- ng-show='userController.loggedIn' -->
+      <div id='movie-display1' class='row' >
         <h1>Favorites</h1>
       </div>
       <div id='movie-display2' class='row' >
