@@ -255,6 +255,7 @@ Features
 
 - create + load seperate html pages for each category 
     - each page is a new carousel for category
+- navbar
 
 
 ---
@@ -264,6 +265,7 @@ Bugs
 - logout --ox--
 - fix Login/Register buttons (free access right now)
 - carousel
+- ng-include for movie navigation (https://docs.angularjs.org/api/ng/directive/ngInclude)
 
 ---
 ---
@@ -281,6 +283,9 @@ Reference
 
 - Bootstrap
 	- http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/
+    - carousel
+        - https://getbootstrap.com/examples/carousel/
+        - http://getbootstrap.com/javascript/#carousel
 
 - Angular:
 	 if/else
