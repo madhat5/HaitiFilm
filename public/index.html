@@ -12,17 +12,27 @@
       <a class='navbar-brand' href="#" >FilmGade</a>
       <!-- HOME SCREEN -->
       <ul class='nav navbar-nav' ng-hide='userController.loggedIn'>
-        <li class='nav-item' >
-          <a href="" title=""></a>Login
+        <li class='nav-item active'>
+          <a class='nav-link' href="#">Login <span class='sr-only'>(current)</span></a>
         </li>
-        <li class='nav-item' href='#'>About</li>
-        <li class='nav-item' href='#'>Other/Misc</li>
+        <li class='nav-item'>
+          <a class='nav-link' href="#">About</a>
+        </li>
+        <li class='nav-item' href='#'>
+          <a class='nav-link' href="#">Other/Misc</a>
+        </li>
       </ul>
       <!-- LOGGED IN -->
-      <ul class='navbar navbar-default' ng-show='userController.loggedIn'>
-        <li class='nav-item'><a href="#" ng-show='userController.loggedIn' ng-click='userController.logOut()'>Logout</a></li>
-        <li class='nav-item'><a href="#" ng-show='userController.loggedIn' ng-click=''>My Profile</a></li>
-        <li class='nav-item'><a href="#" ng-show='userController.loggedIn' ng-click=''>My Movies</a></li>
+      <ul class='nav navbar-nav' ng-show='userController.loggedIn'>
+        <li class='nav-item'>
+          <a href="#" ng-click='userController.logOut()'>Logout</a>
+        </li>
+        <li class='nav-item'>
+          <a href="#" ng-click=''>My Profile</a>
+        </li>
+        <li class='nav-item'>
+          <a href="#" ng-click=''>My Movies</a>
+        </li>
       </ul>
     </nav>
 <!-- ================= WELCOME SCREEN ================= -->
