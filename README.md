@@ -258,7 +258,8 @@ Features/ToDo
     - each page is a new carousel for category
 - navbar --ox--
     - make static-top
-- login page update --o--
+- login page update --ox--
+
 
 
 ---
@@ -266,9 +267,12 @@ Features/ToDo
 Bugs
 
 - logout --ox--
-- fix Login/Register buttons (free access right now)
-- carousel
-- ng-include for movie navigation (https://docs.angularjs.org/api/ng/directive/ngInclude)
+- fix Login/Register buttons (free access right now) --x--?
+- user auth --o--
+    - fix 'undefined registered'
+- carousel --o--
+- ng-include --o--
+    - for movie navigation (https://docs.angularjs.org/api/ng/directive/ngInclude)
 
 ---
 ---
