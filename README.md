@@ -251,11 +251,19 @@ App Build Steps:
 
 ---
 ---
+Features
+
+- create + load seperate html pages for each category 
+    - each page is a new carousel for category
+
+
+---
+---
 Bugs
 
 - logout --ox--
-- userID > 404 not found right after login
-    - server line 42
+- fix Login/Register buttons (free access right now)
+- carousel
 
 ---
 ---
