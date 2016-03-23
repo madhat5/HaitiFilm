@@ -251,11 +251,14 @@ App Build Steps:
 
 ---
 ---
-Features
+Features/ToDo
 
-- create + load seperate html pages for each category 
+- category carousel --o--
+    - create + load seperate html pages for each category 
     - each page is a new carousel for category
-- navbar
+- navbar --ox--
+    - make static-top
+- login page update --o--
 
 
 ---
@@ -290,6 +293,8 @@ Reference
         - http://getbootstrap.com/components/
         - https://getbootstrap.com/examples/navbar-fixed-top/
         - http://v4-alpha.getbootstrap.com/components/navbar/
+    - login page
+        - http://bootsnipp.com/snippets/featured/login-and-register-tabbed-form
 
 - Angular:
 	 if/else
