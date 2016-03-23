@@ -8,11 +8,23 @@
 <body>
   <div id='site-wrapper' ngmyusers>
 <!-- =================== NAVBAR =================== -->
-    <ul class='navbar navbar-default' ng-show='userController.loggedIn'>
-      <li class='nav-item'><a href="#" ng-show='userController.loggedIn' ng-click='userController.logOut()'>Logout</a></li>
-      <li class='nav-item'><a href="#" ng-show='userController.loggedIn' ng-click=''>My Profile</a></li>
-      <li class='nav-item'><a href="#" ng-show='userController.loggedIn' ng-click=''>My Movies</a></li>
-    </ul>
+    <nav class='navbar navbar-light bg-faded'>
+      <a class='navbar-brand' href="#" >FilmGade</a>
+      <!-- HOME SCREEN -->
+      <ul class='nav navbar-nav' ng-hide='userController.loggedIn'>
+        <li class='nav-item' >
+          <a href="" title=""></a>Login
+        </li>
+        <li class='nav-item' href='#'>About</li>
+        <li class='nav-item' href='#'>Other/Misc</li>
+      </ul>
+      <!-- LOGGED IN -->
+      <ul class='navbar navbar-default' ng-show='userController.loggedIn'>
+        <li class='nav-item'><a href="#" ng-show='userController.loggedIn' ng-click='userController.logOut()'>Logout</a></li>
+        <li class='nav-item'><a href="#" ng-show='userController.loggedIn' ng-click=''>My Profile</a></li>
+        <li class='nav-item'><a href="#" ng-show='userController.loggedIn' ng-click=''>My Movies</a></li>
+      </ul>
+    </nav>
 <!-- ================= WELCOME SCREEN ================= -->
     <div class='container-fluid'>
       <div id='landing-page' class='row'>
@@ -78,29 +90,23 @@
   </div> <!-- END OF CAROUSEL -->
   <!-- ========= MOVIE NAVIGATION ========= -->
     <div class='container-fluid' id='movie-display' ng-show='userController.loggedIn'>
-      <!-- ng-show='userController.loggedIn' -->
-      <div id='movie-display1' class='row' >
+      <div id='movie-display1' class='row'>
         <h1>Favorites</h1>
           <div class='favorites-partials' ng-include='/partials/favorites.html'></div>
       </div>
       <div id='movie-display2' class='row' >
-      <!-- ng-show='userController.loggedIn' -->
         <h1>Recently Added</h1>
       </div>
       <div id='movie-display3' class='row' >
-      <!-- ng-show='userController.loggedIn' -->
         <h1>Action</h1>
       </div>
       <div id='movie-display4' class='row' >
-      <!-- ng-show='userController.loggedIn' -->
         <h1>Comedy</h1>
       </div>
       <div id='movie-display5' class='row' >
-      <!-- ng-show='userController.loggedIn' -->
         <h1>Music Videos</h1>
       </div>
       <div id='movie-display6' class='row' >
-      <!-- ng-show='userController.loggedIn' -->
         <h1>Horror</h1>
       </div>
     </div> <!-- end of container -->

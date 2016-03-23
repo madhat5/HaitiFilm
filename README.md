@@ -286,6 +286,10 @@ Reference
     - carousel
         - https://getbootstrap.com/examples/carousel/
         - http://getbootstrap.com/javascript/#carousel
+    - navbar
+        - http://getbootstrap.com/components/
+        - https://getbootstrap.com/examples/navbar-fixed-top/
+        - http://v4-alpha.getbootstrap.com/components/navbar/
 
 - Angular:
 	 if/else
