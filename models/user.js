@@ -13,7 +13,7 @@ var userSchema = new mongoose.Schema({
   favorites: {
     type: Array
   },
-  create_at: {
+  created_at: {
     type: Date,
     default: Date.now
   },

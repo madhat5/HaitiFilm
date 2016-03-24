@@ -10,7 +10,7 @@ var movieSchema = new mongoose.Schema({
   movDescription: {
     type: String,
   },
-  create_at: {
+  created_at: {
     type: Date,
     default: Date.now
   },

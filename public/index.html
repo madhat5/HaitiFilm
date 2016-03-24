@@ -4,39 +4,42 @@
   <title>FilmGade</title>
   <!-- Bootstrap: compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
   <div id='site-wrapper' ngmyusers>
 <!-- =================== NAVBAR =================== -->
-    <nav class='navbar navbar-light bg-faded'>
-      <a class='navbar-brand' href="#" >FilmGade</a>
-      <!-- HOME SCREEN -->
-      <ul class='nav navbar-nav' ng-hide='userController.loggedIn'>
-        <li class='nav-item active'>
-          <a class='nav-link' href="#">Login <span class='sr-only'>(current)</span></a>
-        </li>
-        <li class='nav-item'>
-          <a class='nav-link' href="#">About</a>
-        </li>
-        <li class='nav-item' href='#'>
-          <a class='nav-link' href="#">Other/Misc</a>
-        </li>
-      </ul>
-      <!-- LOGGED IN -->
-      <ul class='nav navbar-nav' ng-show='userController.loggedIn'>
-        <li class='nav-item'>
-          <a href="#" ng-click='userController.logOut()'>Logout</a>
-        </li>
-        <li class='nav-item'>
-          <a href="#" ng-click=''>My Profile</a>
-        </li>
-        <li class='nav-item'>
-          <a href="#" ng-click=''>My Movies</a>
-        </li>
-      </ul>
+    <nav class='navbar navbar-light bg-faded navbar-static-top'>
+      <div class='container'>
+        <a class='navbar-brand' href="#" >FilmGade</a>
+        <!-- HOME SCREEN -->
+        <ul class='nav navbar-nav' ng-hide='userController.loggedIn'>
+          <li class='nav-item active'>
+            <a class='nav-link' href="#">Login <span class='sr-only'>(current)</span></a>
+          </li>
+          <li class='nav-item'>
+            <a class='nav-link' href="#">About</a>
+          </li>
+          <li class='nav-item' href='#'>
+            <a class='nav-link' href="#">Other/Misc</a>
+          </li>
+        </ul>
+        <!-- LOGGED IN -->
+        <ul class='nav navbar-nav' ng-show='userController.loggedIn'>
+          <li class='nav-item'>
+            <a href="#" ng-click='userController.logOut()'>Logout</a>
+          </li>
+          <li class='nav-item'>
+            <a href="#" ng-click=''>My Profile</a>
+          </li>
+          <li class='nav-item'>
+            <a href="#" ng-click=''>My Movies</a>
+          </li>
+        </ul>
+      </div>
     </nav>
 <!-- ================= WELCOME SCREEN ================= -->
-    <div class='container-fluid'>
+    <div class='container'>
       <div id='landing-page' class='row'>
         <div class='col-md-6 col-md-offset-3'>
           <div class='panel panel-login'>
@@ -47,7 +50,7 @@
                   <a href="#" class='active' id='login-form-link'>Login</a>
                 </div>
                 <div class='col-xs-6'>
-                  <a href="#" id='register-form-link'></a>
+                  <a href="#" id='register-form-link'>Register</a>
                 </div>
               </div>
               <hr>
@@ -86,7 +89,7 @@
                     </div>
                   </form> <!-- end of login form -->
                   <!-- REGISTER FORM -->
-                  <form id='register-form' action='#' method='post' role='form' style='dislpay: none'>
+                  <form id='register-form' action='#' method='post' role='form' style='display: none'>
                     <div class='form-group'>
                       <input type='text' name='username' id='username' tabindex="1" class='form-control' placeholder='Email' value='' ng-model='userController.registerUsername'>
                     </div>
@@ -111,8 +114,6 @@
         </div>
       </div>
     </div>
-
-
 <!-- ================== 1st DESIGN ================== -->
         <!-- LOGIN -->
 <!--         <div class='login-form' ng-hide='userController.loggedIn'>
@@ -137,8 +138,6 @@
           <button id='register-submit' type='submit' name='action' class='btn btn-default' ng-click='userController.registerSubmit()'>Register</button>
         </div> --> <!-- end of register-form -->
 <!-- ================== 1st DESIGN ================== -->
-
-
       </div> <!-- end of landing-page -->
     </div> <!-- end of container -->
 <!-- ================== LOGGED IN ================== -->
@@ -181,21 +180,21 @@
     <div class='container-fluid' id='movie-display' ng-show='userController.loggedIn'>
       <div id='movie-display1' class='row'>
         <h1>Favorites</h1>
-          <div class='favorites-partials' ng-include='/partials/favorites.html'></div>
+          <div class='favorites-partials' ng-include='partials/favorites.html'></div>
       </div>
-      <div id='movie-display2' class='row' >
+      <div id='movie-display2' class='row'>
         <h1>Recently Added</h1>
       </div>
-      <div id='movie-display3' class='row' >
+      <div id='movie-display3' class='row'>
         <h1>Action</h1>
       </div>
-      <div id='movie-display4' class='row' >
+      <div id='movie-display4' class='row'>
         <h1>Comedy</h1>
       </div>
-      <div id='movie-display5' class='row' >
+      <div id='movie-display5' class='row'>
         <h1>Music Videos</h1>
       </div>
-      <div id='movie-display6' class='row' >
+      <div id='movie-display6' class='row'>
         <h1>Horror</h1>
       </div>
     </div> <!-- end of container -->
