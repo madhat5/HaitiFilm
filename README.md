@@ -22,14 +22,43 @@ Technical Requirements:
 
 
 ---
-Timeline goals: (start by)
+Timeline goals:
 
-- January --o--
+- January --x--
     - Site planning
     - Basic MEAN
+        - user auth
+
+- February --ox--
+    - CRUD
+        - user movie list
+        - user profile?
+    - Update user auth
+        - implement passport
+    - user test
+
+- March --o--
+    - server launch
+        - heroku to start? or aws free?
+    - MVP
+    - implement payment framework
+    - user test
+
+- April --o--
+    - user test
+    - design
+
+- May --o--
+    - user test
+    - design
+
+- June --o--
+    - user test
+    - design
 
 - July --o--
-	- MVP
+    - user test
+    - design
 
 --
 Deployment flow:
@@ -97,7 +126,7 @@ App Build Steps:
 
 - touch server.js --x--
 
-- npm init --o--
+- npm init --x--
 	-'enter' through all the prompts
 
 - packages setup --x--
@@ -158,7 +187,7 @@ App Build Steps:
 		- var User = mongoose.model('User', userSchema);
 		- module.exports = User;
 
-- user auth build --o--
+- user auth build --x--
 	- server.js
 		- create register
 		- create login/user info
@@ -166,6 +195,28 @@ App Build Steps:
 	- CURL test
 		- register: curl -X POST -d '{"username": "test@test.com", "password": "test"}' http://localhost:3000/users
 		- login: curl -X POST -d '{"username": "test@test.com", "password": "test"}' http://localhost:3000/login
+
+- Basic Story build --ox--
+    - public/index.html
+    	- CDN
+			- js-cookie
+				- <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.0.4/js.cookie.js"></script>
+		    - angular
+		    	- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		    - bootstrap
+		    	- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+		    	- html build
+    - public/app.js
+        - public/index.html
+            - link app.js to index.html
+    	- angular build
+    		- user auth
+    			- build around ngshow (if user true, show all, else (please login))
+    		- goal CRUD controller
+    		- goal.step CRUD controller
+    		- user controller
+    - public/style.css
+		- bootstrap
 
 - models build --o--
     - server.js
@@ -185,26 +236,6 @@ App Build Steps:
     	- Goal CRUD
     	- Step CRUD
 
-- Story build --o--
-    - public/index.html
-    	- CDN --o--
-			- js-cookie
-				- <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.0.4/js.cookie.js"></script>
-		    - angular
-		    	- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-		    - bootstrap
-		    	- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-		    	- html build
-    - public/app.js
-    	- angular build
-    		- user auth
-    			- build around ngshow (if user true, show all, else (please login))
-    		- goal CRUD controller
-    		- goal.step CRUD controller
-    		- user controller
-    - public/style.css
-		- bootstrap
-
 - Heroku --o-- (OR AWS?)
 	- heroku create
 	- touch Procfile
@@ -220,6 +251,29 @@ App Build Steps:
 
 ---
 ---
+Features/ToDo
+
+- category carousel --o--
+    - create + load seperate html pages for each category 
+    - each page is a new carousel for category
+- navbar --ox--
+    - make static-top
+- login page functionality --ox--
+
+
+
+---
+---
+Bugs
+
+- logout --ox--
+- fix Login/Register buttons (free access right now) --x--?
+- user auth --o--
+    - fix 'undefined registered'
+- carousel --o--
+- carousel partials
+- ng-include --o--
+    - for movie navigation (https://docs.angularjs.org/api/ng/directive/ngInclude)
 
 ---
 ---
@@ -237,6 +291,15 @@ Reference
 
 - Bootstrap
 	- http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/
+    - carousel
+        - https://getbootstrap.com/examples/carousel/
+        - http://getbootstrap.com/javascript/#carousel
+    - navbar
+        - http://getbootstrap.com/components/
+        - https://getbootstrap.com/examples/navbar-fixed-top/
+        - http://v4-alpha.getbootstrap.com/components/navbar/
+    - login page
+        - http://bootsnipp.com/snippets/featured/login-and-register-tabbed-form
 
 - Angular:
 	 if/else
@@ -244,6 +307,8 @@ Reference
 		- http://stackoverflow.com/questions/15810278/if-else-statement-in-angularjs-templates
 	- hide/show
 		- https://scotch.io/tutorials/how-to-use-ngshow-and-nghide
+    - debug
+        - http://stackoverflow.com/questions/31445470/angularjs-stopped-working
 
 - Misc
 	- CSS colors:
@@ -259,7 +324,14 @@ Reference
 ---
 Comments/Notes:
 
-- 
-
-
+- gui
+    > Use final project for movie displays --ox
+        - movie genres part of movie model
+        _ Movie CRUD mostly for Favorites list
+    > Use final project for navbar --ox
+    > Use porfolio for carousel --ox
+    > SEED TEMP MOVIE DATA
+    > search --o
+- setup movie model --x
+    - action, adventure, comdedy, crime, drama, historical, horror, mystery, romance, science fiction, animation/cartoon, music video, favorites + recently added
 

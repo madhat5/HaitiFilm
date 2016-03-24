@@ -1,11 +1,207 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='MyUsers' lang='en'>
 <head>
-  <title>HaitiFlix</title>
+  <title>FilmGade</title>
+  <!-- Bootstrap: compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <h1>Bonjour</h1>
-
+  <div id='site-wrapper' ngmyusers>
+<!-- =================== NAVBAR =================== -->
+    <nav class='navbar navbar-light bg-faded navbar-static-top'>
+      <div class='container'>
+        <a class='navbar-brand' href="#" >FilmGade</a>
+        <!-- HOME SCREEN -->
+        <ul class='nav navbar-nav' ng-hide='userController.loggedIn'>
+          <li class='nav-item active'>
+            <a class='nav-link' href="#">Login <span class='sr-only'>(current)</span></a>
+          </li>
+          <li class='nav-item'>
+            <a class='nav-link' href="#">About</a>
+          </li>
+          <li class='nav-item' href='#'>
+            <a class='nav-link' href="#">Other/Misc</a>
+          </li>
+        </ul>
+        <!-- LOGGED IN -->
+        <ul class='nav navbar-nav' ng-show='userController.loggedIn'>
+          <li class='nav-item'>
+            <a href="#" ng-click='userController.logOut()'>Logout</a>
+          </li>
+          <li class='nav-item'>
+            <a href="#" ng-click=''>My Profile</a>
+          </li>
+          <li class='nav-item'>
+            <a href="#" ng-click=''>My Movies</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+<!-- ================= WELCOME SCREEN ================= -->
+    <div class='container'>
+      <div id='landing-page' class='row'>
+        <div class='col-md-6 col-md-offset-3'>
+          <div class='panel panel-login'>
+            <!-- LOGIN/REGISTER HEADER -->
+            <div class='panel-heading'>
+              <div class='row'>
+                <div class='col-xs-6'>
+                  <a href="#" class='active' id='login-form-link'>Login</a>
+                </div>
+                <div class='col-xs-6'>
+                  <a href="#" id='register-form-link'>Register</a>
+                </div>
+              </div>
+              <hr>
+            </div> <!-- end of login/register header -->
+            <!-- LOGIN/REGISTER BODY -->
+            <div class='panel-body'>
+              <div class='row'>
+                <div class='col-lg-12'>
+                  <!-- LOGIN FORM -->
+                  <form id='login-form' action='#' method='post' role='form' style='display: block;'>
+                    <div class='form-group'>
+                      <input type='text' name='username' id='username' tabindex='1' class='form-control' placeholder='Email' value='' ng-model='userController.loginUsername'>
+                    </div>
+                    <div class='form-group'>
+                      <input type='password' name='password' id='password' tabindex='2' class='form-control' placeholder='Password' ng-model='userController.loginPassword'>
+                    </div>
+                    <div class='form-group text-center'>
+                      <input type='checkbox' tabindex='3' class'' name='remember' id='remember'>
+                      <label for="remember">Remember Me</label>
+                    </div>
+                    <div class='form-group'>
+                      <div class='row'>
+                        <div class='col-sm-6 col-sm-offset-3'>
+                          <input type='submit' name='login-submit' id='login-sumit' tabindex="4" class='form-control btn btn-login' value='Log In' ng-click='userController.loginSubmit()'>
+                        </div>
+                      </div>
+                    </div>
+                    <div class='form-group'>
+                      <div class='row'>
+                        <div class='col-lg-12'>
+                          <div class='text-center'>
+                            <a href="#" tabindex="5" class='forgot-password'>Forgot Password?</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form> <!-- end of login form -->
+                  <!-- REGISTER FORM -->
+                  <form id='register-form' action='#' method='post' role='form' style='display: none'>
+                    <div class='form-group'>
+                      <input type='text' name='username' id='username' tabindex="1" class='form-control' placeholder='Email' value='' ng-model='userController.registerUsername'>
+                    </div>
+                    <div class='form-group'>
+                      <input type='password' name='password' id='password' tabindex="2" class='form-control' placeholder='Password' ng-model='userController.registerPassword'>
+                    </div>
+                    <div class='form-group'>
+                      <input type='password' name='confirm-password' id='confirm-password' tabindex="2" class='form-control' placeholder='Confirm Password' ng-model='userController.registerPassword'>
+                    </div>
+                    <div class='form-group'>
+                      <div class='row'>
+                        <div class='col-sm-6 col-sm-offset-3'>
+                          <input type='submit' name='register-submit' id='register-submit' tabindex="4" class='form-control btn btn-register' value='Register Now' ng-click='userController.registerSubmit()'>
+                        </div>
+                      </div>
+                    </div>
+                  </form> <!-- end of register form -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- ================== 1st DESIGN ================== -->
+        <!-- LOGIN -->
+<!--         <div class='login-form' ng-hide='userController.loggedIn'>
+          <div id='login-input'>
+            <h1>Login</h1>
+            <input id='login-username' type='text' class='validate' placeholder='Email' ng-model='userController.loginUsername'>
+            <input id='login-password' type='password' placeholder='Password' ng-model='userController.loginPassword'>
+          </div>
+          <br>
+          <br>
+          <button id='login-submit' type='submit' name='action' class='btn btn-default' ng-click='userController.loginSubmit()'>Login</button>
+        </div>  --><!-- end of login-form -->
+        <!-- REGISTER -->
+<!--         <div id='register-form' ng-hide='userController.loggedIn'>
+          <div id='register-input'>
+            <h1>REGISTER</h1>
+            <input id='register-username' type='text' class='validate' placeholder='Email' ng-model='userController.registerUsername'>
+            <input id='register-password' type='password' class='validate' placeholder='Password' ng-model='userController.registerPassword'>
+          </div>
+          <br>
+          <br>
+          <button id='register-submit' type='submit' name='action' class='btn btn-default' ng-click='userController.registerSubmit()'>Register</button>
+        </div> --> <!-- end of register-form -->
+<!-- ================== 1st DESIGN ================== -->
+      </div> <!-- end of landing-page -->
+    </div> <!-- end of container -->
+<!-- ================== LOGGED IN ================== -->
+  <!-- MOVIE DISPLAY -->
+      <!-- ========= CAROUSEL ========= -->
+  <div id='myCarousel' class='carousel slide' data-ride='carousel' ng-show='userController.loggedIn'>
+    <!-- Indicators -->
+    <ol class='carousel-indicators'>
+      <li data-target='#myCarousel' data-slide-to='0' class='active'></li>
+      <li data-target='#myCarousel' data-slide-to='1'></li>
+      <li data-target='#myCarousel' data-slide-to='2'></li>
+      <li data-target='#myCarousel' data-slide-to='3'></li>
+    </ol>
+    <!-- Wrapper for slides -->
+    <div class='carousel-inner' role='listbox'>
+      <div class='item active'>
+        <img src="/images/revenant.jpg" alt="Movie">
+      </div>
+      <div class='item'>
+        <img src="/images/inception.jpg" alt="Movie">
+      </div>
+      <div class='item'>
+        <img src="/images/avengers.jpg" alt="Movie">
+      </div>
+      <div class='item'>
+        <img src="/images/johncarter.jpg" alt="Movie">
+      </div>
+    </div>
+    <!-- Left and right controls -->
+    <a class='left carousel-control' href="#myCarousel" role='button' data-slide='prev'>
+      <span class='glyphicon glyphicon-chevron-left' aria-hidden='true'></span>
+      <span class='sr-only'>Previous</span>
+    </a>
+    <a class='right carousel-control' href="#myCarousel" role='button' data-slide='next'>
+      <span class='glyphicon glyphicon-chevron-right' aria-hidden='true'</span>
+      <span class='sr-only'>Next</span>
+    </a>
+  </div> <!-- END OF CAROUSEL -->
+  <!-- ========= MOVIE NAVIGATION ========= -->
+    <div class='container-fluid' id='movie-display' ng-show='userController.loggedIn'>
+      <div id='movie-display1' class='row'>
+        <h1>Favorites</h1>
+          <div class='favorites-partials' ng-include='partials/favorites.html'></div>
+      </div>
+      <div id='movie-display2' class='row'>
+        <h1>Recently Added</h1>
+      </div>
+      <div id='movie-display3' class='row'>
+        <h1>Action</h1>
+      </div>
+      <div id='movie-display4' class='row'>
+        <h1>Comedy</h1>
+      </div>
+      <div id='movie-display5' class='row'>
+        <h1>Music Videos</h1>
+      </div>
+      <div id='movie-display6' class='row'>
+        <h1>Horror</h1>
+      </div>
+    </div> <!-- end of container -->
+  </div> <!-- end of ngmyusers -->
+<!-- ================== SCRIPTS ================== -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.0.4/js.cookie.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
   <script src='app.js'></script>
 </body>
 </html>
